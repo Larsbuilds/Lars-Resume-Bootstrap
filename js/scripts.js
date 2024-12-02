@@ -79,7 +79,7 @@ function fadeIn(el, display) {
     })();
 };
 
-const jobTitles = ["AI Web Technologist", "AI Business Expert", "Web Developer", "Software Engineer", "UX Designer", "Project Manager", "Full-Stack Developer", "Quality Authority", "Requirement Engineer", "Test manager", "ISTQB Certified Tester", "Philantropist"];
+const jobTitles = ["AI Web Technologist", "AI Business Expert", "Web Developer", "Software Engineer", "UX Designer", "Project Manager", "Full-Stack Developer", "Quality Authority", "Requirement Engineer", "Software Test manager", "ISTQB Certified Tester", "Philantropist"];
 let currentJobIndex = 0;
 const targetElement = document.querySelector('h3.mb-5 > em'); // Select the target element
 
