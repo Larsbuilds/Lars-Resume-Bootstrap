@@ -11122,6 +11122,7 @@ footer.footer .social-link:hover {
 .caption-content {
   text-shadow: 1px 1px 1px black;
   opacity: 100%;
+  padding-top: 47px;
 }
 
 header.masthead {
@@ -11172,3 +11173,4 @@ h3.mb-5 > em {
   right: 0;
   display: block;
 }
+
