@@ -11163,3 +11163,12 @@ h3.mb-5 > em {
   animation: fadeInAndOut 4000ms infinite; /* Total animation duration including interval */
   animation-delay: 000ms; /* Delay the start of the animation */
 }
+
+.portfolio-item .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+}

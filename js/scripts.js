@@ -90,3 +90,11 @@ setInterval(() => {
   currentJobIndex = (currentJobIndex + 1) % jobTitles.length;
   targetElement.textContent = jobTitles[currentJobIndex];
 }, 4000); // Set interval to match total animation duration
+
+const portfolioItems = document.querySelectorAll('.portfolio-item .caption');
+
+portfolioItems.forEach(caption => {
+  caption.addEventListener('click', () => {
+    window.location.href = caption.parentElement.href;
+  });
+});
