@@ -63,7 +63,7 @@
             <h3 class="text-secondary mb-0">Experience</h3>
             <h2 class="mb-5">Recent Roles & Projects</h2>
         </div>
-        <div class="row gx-0">
+        <div class="row gx-2 gy-2">
             <div class="col-lg-6">
                 <a class="portfolio-item" href="https://www.wbscodingschool.com/web-app-development-bootcamp/">
                     <div class="caption">
@@ -224,7 +224,7 @@
                         <a class="social-link rounded-circle text-white" href="https://github.com/Larsbuilds"><i class="icon-social-github"></i></a>
                     </li>
                 </ul>
-                <p class="text-muted small mb-0">Copyright &copy; My Website 2024</p>
+                <p class="text-muted small mb-0">Copyright &copy; Lars Tischer 2024</p>
             </div>
         </footer>
         <!-- Scroll to Top Button-->
@@ -233,31 +233,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const navbarCollapse = document.querySelector(".navbar-collapse");
-              const navbarToggler = document.querySelector(".navbar-toggler");
-          
-              // Close navbar when clicking on a nav-link
-              document.querySelectorAll(".nav-link").forEach(link => {
-                link.addEventListener("click", () => {
-                  if (navbarCollapse.classList.contains("show")) {
-                    navbarCollapse.classList.remove("show");
-                  }
-                });
-              });
-              
-          
-              // Close navbar when clicking outside
-              document.addEventListener("click", (event) => {
-                const isClickInsideNavbar = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
-          
-                if (!isClickInsideNavbar && navbarCollapse.classList.contains("show")) {
-                  navbarCollapse.classList.remove("show");
-                }
-              });
-            });
-          </script>
     </body>
 </html>
