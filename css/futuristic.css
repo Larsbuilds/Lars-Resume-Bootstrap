@@ -1,0 +1,438 @@
+/* Futuristic Theme Variables */
+:root {
+    --neon-blue: #00f3ff;
+    --deep-space: #1a1a2e;
+    --cyber-purple: #7209b7;
+    --tech-green: #4ade80;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Space Grotesk', sans-serif !important;
+    background-color: var(--deep-space);
+    color: #fff;
+}
+
+h1, h2, h3, .h2 {
+    font-family: 'Orbitron', sans-serif !important;
+    color: var(--neon-blue);
+}
+
+/* Modern Button Styles */
+.btn-xl {
+    position: relative;
+    background: transparent !important;
+    border: 2px solid var(--neon-blue) !important;
+    border-radius: 8px !important;
+    padding: 15px 30px !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    overflow: hidden;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3) !important;
+    color: var(--neon-blue) !important;
+}
+
+.btn-xl:hover {
+    background: var(--neon-blue) !important;
+    color: var(--deep-space) !important;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+/* Portfolio Item Styles */
+.portfolio-item {
+    position: relative;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Image Styles */
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+/* Caption Base Styles */
+.portfolio-item .caption {
+    background: linear-gradient(
+        135deg,
+        rgba(114, 9, 183, 0),    /* Start fully transparent */
+        rgba(26, 26, 46, 0)      /* Start fully transparent */
+    ) !important;
+    transition: all 1.5s ease !important;
+}
+
+/* Caption Content Styles */
+.portfolio-item .caption-content {
+    z-index: 1;
+    position: relative;
+    opacity: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: all 1.5s ease;
+}
+
+/* Only Image Hover Effect */
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Text Styles within Caption */
+.portfolio-item .caption-content h2,
+.portfolio-item .caption-content .h2 {
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+}
+
+.portfolio-item .caption-content p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Subtle gradient overlay for text readability */
+.portfolio-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Navigation Updates */
+#sidebar-wrapper {
+    background: linear-gradient(180deg, var(--deep-space), var(--cyber-purple)) !important;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar-nav li a {
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    color: #fff !important;
+}
+
+.sidebar-nav li a:hover {
+    border-left: 3px solid var(--neon-blue);
+    background: rgba(0, 243, 255, 0.1) !important;
+    color: var(--neon-blue) !important;
+}
+
+/* Section Headers */
+.content-section-heading h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--neon-blue) !important;
+}
+
+.content-section-heading h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--cyber-purple));
+}
+
+/* Background Colors */
+.bg-light {
+    background-color: var(--deep-space) !important;
+    color: #fff !important;
+}
+
+/* Masthead Overlay */
+.masthead {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+.masthead video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 46, 0.6),
+        rgba(114, 9, 183, 0.6)
+    );
+    z-index: 1;
+}
+
+.masthead .container {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text Colors */
+.text-secondary {
+    color: var(--neon-blue) !important;
+}
+
+.lead {
+    color: #fff !important;
+}
+
+/* Video Background */
+.masthead video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 46, 0.8),
+        rgba(114, 9, 183, 0.8)
+    );
+    z-index: 1;
+}
+
+/* Override default hover effects */
+@media (min-width: 992px) {
+    .portfolio-item {
+        max-width: none;
+        margin: 0;
+    }
+    .portfolio-item .caption {
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+    }
+    .portfolio-item img {
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+    }
+    .portfolio-item:hover img {
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+    }
+    .portfolio-item:hover .caption {
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+    }
+}
+
+/* Hover Effect - Reduced opacity to 0.5 (50%) */
+.portfolio-item:hover .caption {
+    background: linear-gradient(
+        135deg,
+        rgba(114, 9, 183, 0.5),  /* Cyber Purple at 50% */
+        rgba(26, 26, 46, 0.5)    /* Deep Space at 50% */
+    ) !important;
+    backdrop-filter: blur(3px);
+}
+
+/* Make text more visible against video */
+.masthead h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.masthead h3 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Futuristic Social Icons */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: transparent !important;
+    border: 2px solid var(--neon-blue);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 243, 255, 0.2),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+.social-link:hover {
+    box-shadow: 0 0 15px var(--neon-blue);
+    transform: translateY(-3px);
+    border-color: var(--tech-green);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+    color: var(--neon-blue);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover i {
+    color: var(--tech-green);
+    transform: scale(1.2);
+}
+
+/* Update footer background */
+.footer {
+    background: linear-gradient(
+        180deg,
+        var(--deep-space),
+        rgba(114, 9, 183, 0.3)
+    ) !important;
+    padding: 5rem 0;
+}
+
+.footer .text-muted {
+    color: var(--neon-blue) !important;
+    opacity: 0.7;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: var(--neon-blue);
+    background: rgba(26, 26, 46, 0.8);
+    line-height: 50px;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--neon-blue);
+    color: var(--deep-space);
+}
+
+.menu-toggle:focus {
+    outline: none;
+}
+
+/* Sidebar Styles */
+#sidebar-wrapper {
+    position: fixed;
+    z-index: 998;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 46, 0.95),
+        rgba(114, 9, 183, 0.95)
+    ) !important;
+    top: 0;
+}
+
+#sidebar-wrapper.active {
+    right: 0;
+    transform: none;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li:first-child {
+    padding-top: 3rem;
+}
+
+.sidebar-nav li.sidebar-nav-item a {
+    display: block;
+    text-decoration: none;
+    color: var(--neon-blue);
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav li.sidebar-brand a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sidebar-nav li a:hover {
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--neon-blue);
+    text-decoration: none;
+}
+
+/* Body class when sidebar is open */
+body.sidebar-toggled {
+    overflow: hidden;
+}
+
+/* Adjust menu toggle appearance when active */
+.menu-toggle.active {
+    background: var(--neon-blue);
+    color: var(--deep-space);
+}
+
+/* Make sure sidebar nav items are properly spaced */
+.sidebar-nav li {
+    border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+}
+
+.sidebar-nav li:last-child {
+    border-bottom: none;
+} 

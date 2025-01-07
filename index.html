@@ -16,6 +16,10 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/futuristic.css" rel="stylesheet" />
+        <!-- Modern Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body id="page-top"> 
         <!-- Navigation--> 
@@ -32,10 +36,12 @@
             </ul>
         </nav>
         <!-- Header-->
-        <header class="masthead d-flex align-items-center"><video autoplay muted controls loop>
-            <source src="./assets/img/Working-on-Laptop.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <header class="masthead d-flex align-items-center">
+            <div class="overlay"></div>
+            <video autoplay muted loop playsinline>
+                <source src="assets/img/Working-on-Laptop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1">Lars Tischer</h1>
                 <h3 class="mb-5"><em>AI Web Technologist</em></h3>
@@ -167,10 +173,10 @@
                                         • Zero-Shot Prompting<br>
                                         • Few-Shot Prompting<br>
                                         • Chain-of-Thought Reasoning<br>
-                                        • Self-Consistency<br>
+                                        • Zero-shot Prompting<br>
                                         • Prompt Chaining<br>
-                                        • Role Prompting<br>
-                                        • System Prompts
+                                        • Tree of Thoughts<br>
+                                        • Retrieval Augmented Generation<br>
                                     </p>
                                 </div>
                             </div>
@@ -236,7 +242,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="https://www.promptingguide.ai/" class="btn btn-primary btn-xl me-3">Learn More</a>
+                    <a href="https://www.promptingguide.ai/" class="btn btn-primary btn-xl">Learn More</a>
                     <a href="#contact" class="btn btn-secondary btn-xl">Discuss AI Solutions</a>
                 </div>
             </div>
@@ -314,13 +320,19 @@
             <div class="container px-4 px-lg-5">
                 <ul class="list-inline mb-5">
                     <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/profile.php?id=61561488298995"><i class="icon-social-facebook"></i></a>
+                        <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/profile.php?id=61561488298995">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/lars-tischer-5b9b13317/"><i class="icon-social-linkedin"></i></a>
+                        <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/lars-tischer-5b9b13317/">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="https://github.com/Larsbuilds"><i class="icon-social-github"></i></a>
+                        <a class="social-link rounded-circle text-white" href="https://github.com/Larsbuilds">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </li>
                 </ul>
                 <p class="text-muted small mb-0">Copyright &copy; Lars Tischer 2024</p>
