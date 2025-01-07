@@ -229,23 +229,24 @@ h1, h2, h3, .h2 {
 
 /* Override default hover effects */
 @media (min-width: 992px) {
-    .portfolio-item {
-        max-width: none;
-        margin: 0;
-    }
     .portfolio-item .caption {
+        transition: background 1.5s ease !important;
         -webkit-clip-path: none !important;
         clip-path: none !important;
     }
+    
+    .portfolio-item:hover .caption {
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+        background-color: transparent !important;
+    }
+    
     .portfolio-item img {
         -webkit-clip-path: none !important;
         clip-path: none !important;
     }
+    
     .portfolio-item:hover img {
-        -webkit-clip-path: none !important;
-        clip-path: none !important;
-    }
-    .portfolio-item:hover .caption {
         -webkit-clip-path: none !important;
         clip-path: none !important;
     }
