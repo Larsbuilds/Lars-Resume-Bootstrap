@@ -594,7 +594,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -8298,6 +8298,26 @@ textarea.form-control-lg {
   visibility: hidden !important;
 }
 
+.language-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 1000;
+    background-color: #1D809F;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.language-toggle:hover {
+    background-color: #155d74;
+    transform: scale(1.05);
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
@@ -11172,5 +11192,37 @@ h3.mb-5 > em {
   bottom: 0;
   right: 0;
   display: block;
+}
+
+#languageToggle {
+    position: fixed;
+    right: 80px;
+    top: 15px;
+    z-index: 1000;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;  /* Added to ensure emoji stays within bounds */
+    border-radius: 50%;
+}
+
+#languageToggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#languageIcon {
+    font-size: 40px;  /* Increased from 28px */
+    line-height: 1;
+    transform: scale(1.2);  /* Added to make emoji slightly bigger */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

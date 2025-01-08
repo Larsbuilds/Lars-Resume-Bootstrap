@@ -62,17 +62,57 @@ function fadeIn(el, display) {
     })();
 };
 
-const jobTitles = ["AI Web Technologist", "AI Business Expert", "Web Developer", "Software Engineer", "UX Designer", "Project Manager", "Full-Stack Developer", "Quality Authority", "Requirement Engineer", "Software Test manager", "ISTQB Certified Tester", "Philantropist"];
+const jobTitles = {
+    en: [
+        "AI Web Technologist",
+        "AI Business Expert",
+        "Web Developer",
+        "Software Engineer",
+        "UX Designer",
+        "Project Manager",
+        "Full-Stack Developer",
+        "Quality Authority",
+        "Requirement Engineer",
+        "Software Test Manager",
+        "ISTQB Certified Tester",
+        "Philantropist"
+    ],
+    de: [
+        "KI Web Technologe",
+        "KI Business Experte",
+        "Web Entwickler",
+        "Software Ingenieur",
+        "UX Designer",
+        "Projektmanager",
+        "Full-Stack Entwickler",
+        "Qualitätsbeauftragter",
+        "Anforderungsingenieur",
+        "Software Test Manager",
+        "ISTQB Zertifizierter Tester",
+        "Philanthrop"
+    ]
+};
+
 let currentJobIndex = 0;
-const targetElement = document.querySelector('h3.mb-5 > em'); // Select the target element
+const targetElement = document.querySelector('h3.mb-5 > em');
+
+// Function to get current language
+function getCurrentLanguage() {
+    return document.documentElement.getAttribute('lang') || 'en';
+}
 
 // Set initial text content
-targetElement.textContent = jobTitles[currentJobIndex];
+targetElement.textContent = jobTitles[getCurrentLanguage()][currentJobIndex];
 
 setInterval(() => {
-  currentJobIndex = (currentJobIndex + 1) % jobTitles.length;
-  targetElement.textContent = jobTitles[currentJobIndex];
-}, 4000); // Set interval to match total animation duration
+    currentJobIndex = (currentJobIndex + 1) % jobTitles[getCurrentLanguage()].length;
+    targetElement.textContent = jobTitles[getCurrentLanguage()][currentJobIndex];
+}, 4000);
+
+// Add event listener for language changes
+document.addEventListener('languageChanged', () => {
+    targetElement.textContent = jobTitles[getCurrentLanguage()][currentJobIndex];
+});
 
 const portfolioItems = document.querySelectorAll('.portfolio-item .caption');
 

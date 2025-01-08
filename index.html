@@ -20,19 +20,32 @@
         <!-- Modern Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="js/translations.js" defer></script>
+        <style>
+            #languageToggle {
+                position: fixed;
+                right: 80px; /* Moved left from the hamburger menu */
+                top: 15px;
+                z-index: 1000;
+            }
+        </style>
     </head>
     <body id="page-top"> 
+        <!-- Add this right after the opening <body> tag -->
+        <button id="languageToggle" class="social-link rounded-circle" onclick="toggleLanguage()">
+            <span id="languageIcon">🇬🇧</span>
+        </button>
         <!-- Navigation--> 
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Lars Tischer</a></li>
-                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">contact</a></li>
-                <li class="sidebar-nav-item"><a href="#social">Social</a></li>
-                <li class="sidebar-nav-item"><a href="#ai-guide">AI Guide</a></li>
+                <li class="sidebar-brand"><a>Lars Tischer</a></li>
+                <li class="sidebar-nav-item"><a href="#page-top" data-translate="home">Home</a></li>
+                <li class="sidebar-nav-item"><a href="#about" data-translate="about">About</a></li>
+                <li class="sidebar-nav-item"><a href="#portfolio" data-translate="portfolio">Portfolio</a></li>
+                <li class="sidebar-nav-item"><a href="#ai-guide" data-translate="aiGuide">AI Guide</a></li>
+                <li class="sidebar-nav-item"><a href="#social" data-translate="social">Social</a></li>
+                <li class="sidebar-nav-item"><a href="#contact" data-translate="contact">Contact</a></li>
             </ul>
         </nav>
         <!-- Header-->
@@ -44,8 +57,8 @@
             </video>
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1">Lars Tischer</h1>
-                <h3 class="mb-5"><em>AI Web Technologist</em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <h3 class="mb-5"><em data-translate="webTechnologist">AI Web Technologist</em></h3>
+                <a class="btn btn-primary btn-xl" href="#about" data-translate="findOutMore">Find Out More</a>
             </div>
         </header>
         <!-- About-->
@@ -55,8 +68,8 @@
               <img src="./assets/img/iScreen Shoter - Pages - 241023170445.jpg" class="d-block mx-lg-auto img-fluid" alt="Lars img" width="700" height="500" style="border-radius: 10px" loading="lazy">
             </div>
             <div class="col-lg-6">
-              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About me</h1>
-              <p class="lead" style="text-align: justify;">I am a Senior Project Manager with 7 years of experience, accountable as Quality Authority within the software development process for medical technology software. Leading decentralized, cross-functional teams, managing complex projects with more than 1400 software requirements. Driving continuous improvement initiatives such as the setup of a modernst test laboratory to always assure quality relevant evidence before project deadlines. 
+              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" data-translate="aboutMe">About me</h1>
+              <p class="lead" data-translate="aboutText" style="text-align: justify;">I am a Senior Project Manager with 7 years of experience, accountable as Quality Authority within the software development process for medical technology software. Leading decentralized, cross-functional teams, managing complex projects with more than 1400 software requirements. Driving continuous improvement initiatives such as the setup of a modernst test laboratory to always assure quality relevant evidence before project deadlines. 
                 Adept at strategic planning for design verifications, requirement -and test management, regulated product documentation according to the V-model and agile development. Fostering collaboration to achieve organizational goals in alignment with individual’s purpose. Sincere people empowerer, communicator and persuader by nature.
                 </p>
             </div>
@@ -67,30 +80,30 @@
  <section class="content-section" id="portfolio">
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
-            <h3 class="text-secondary mb-0">Experience</h3>
-            <h2 class="mb-5">Recent Roles & Projects</h2>
+            <h3 class="text-secondary mb-0" data-translate="experience">Experience</h3>
+            <h2 class="mb-5" data-translate="recentRoles">Recent Roles & Projects</h2>
         </div>
         <div class="row gx-2 gy-2">
             <div class="col-lg-6">
                 <a class="portfolio-item" href="https://www.wbscodingschool.com/web-app-development-bootcamp/">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2" style="font-size:xx-large;">Bootcamp<br>Full-Stack Web & App Development</div>
-                            <p class="mb-0" style="font-weight: bold;">WBS Coding School<br>Berlin, Germany<br>02/2025 – 06/2025</p>
+                            <div class="h2" style="font-size:xx-large;" data-translate="bootcampFullStack"></div>
+                            <p class="mb-0" style="font-weight: bold;" data-translate="bootcampFullStackLocation"></p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="./assets/img/Screenshot 2024-12-04 at 3.27.27 PM.png" alt="..." />
+                    <img class="img-fluid" src="./assets/img/fullstack dev.png" alt="Full-Stack Development Bootcamp" />
                 </a>
             </div>
             <div class="col-lg-6">
                 <a class="portfolio-item" href="https://www.wbscodingschool.com/ai-for-business-course/">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2" style="font-size:xx-large;">Bootcamp<br>AI for Business</div>
-                            <p class="mb-0" style="font-weight: bold;">WBS Coding School<br>Berlin, Germany<br>12/2024 – 01/2025</p>
+                            <div class="h2" style="font-size:xx-large;" data-translate="bootcampAI"></div>
+                            <p class="mb-0" style="font-weight: bold;" data-translate="bootcampAILocation"></p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="./assets/img/Screenshot 2024-12-04 at 3.22.50 PM.png" alt="..." />
+                    <img class="img-fluid" src="./assets/img/ai bootcamp.png" alt="AI for Business Bootcamp" />
                 </a>
             </div>
             <div class="col-lg-6">
@@ -101,7 +114,7 @@
                             <p class="mb-0" style="font-weight: bold;">OLYMPUS Surgical Technologies Europe<br>Hamburg, Germany<br>04/2019 – 04/2024</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="./assets/img/Screenshot 2024-11-29 at 7.41.32 PM.png" alt="..." />
+                    <img class="img-fluid" src="./assets/img/test manager.png" alt="..." />
                 </a>
             </div>
             <div class="col-lg-6">
@@ -112,7 +125,7 @@
                             <p class="mb-0" style="font-weight: bold;text-align: end;">OLYMPUS Surgical Technologies Europe<br> Hamburg, Germany<br>08/2017 – 04/2024</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="assets/img/Screenshot 2024-11-29 at 11.03.55 PM.png" alt="..." />
+                    <img class="img-fluid" src="assets/img/hytrack.png" alt="..." />
                 </a>
             </div>
             <div class="col-lg-12">
@@ -123,29 +136,29 @@
                             <p class="mb-0" style="font-weight: bold;">OLYMPUS Surgical Technologies Europe<br> Hamburg, Germany<br>08/2017 - 03/2019</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="assets/img/Screenshot 2024-11-29 at 7.38.53 PM.png" alt="..." />
+                    <img class="img-fluid" src="assets/img/test engineer.png" alt="..." />
                 </a>
             </div>
             <div class="col-lg-6">
                 <a class="portfolio-item" href="https://yxlon.comet.tech/en/software-suite">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2" style="font-size:xx-large;">Service Technician<br>3D X-Ray, CT</div>
+                            <div class="h2" style="font-size:xx-large;" data-translate="serviceTechnicianXray">Service Technician<br>3D X-Ray, CT</div>
                             <p class="mb-0" style="font-weight: bold;">YXLON International<br>Hamburg, Germany<br>01/2014 - 09/2015</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="assets/img/Screenshot 2024-11-29 at 11.50.58 PM.png" alt="..." />
+                    <img class="img-fluid" src="./assets/img/yxlon.png" alt="YXLON" />
                 </a>
             </div>
             <div class="col-lg-6">
                 <a class="portfolio-item" href="https://www.mte-service.com/en/">
                     <div class="caption">
                         <div class="caption-content">
-                            <div class="h2" style="font-size:xx-large;text-align: end;">Construction Manager,<br> Biogas Plants</div>
+                            <div class="h2" style="font-size:xx-large;text-align: end;" data-translate="constructionManagerBiogas">Construction Manager,<br> Biogas Plants</div>
                             <p class="mb-0" style="font-weight: bold;text-align: end;">Elektro Frank Guenther / MT Energy<br>Hamburg, Germany<br>02/2010 - 01/2012</p>
                         </div>
                     </div>
-                    <img class="img-fluid" src="assets/img/Screenshot 2024-11-30 at 12.09.56 AM.png" alt="..." />
+                    <img class="img-fluid" src="./assets/img/biogas.png" alt="MT Energy" />
                 </a>
             </div>
         </div>
@@ -155,12 +168,12 @@
 <section class="content-section bg-light" id="ai-guide">
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
-            <h3 class="text-secondary mb-0">AI Knowledge</h3>
-            <h2 class="mb-5">Prompt Engineering Handbook</h2>
+            <h3 class="text-secondary mb-0" data-translate="aiKnowledge">AI Knowledge</h3>
+            <h2 class="mb-5" data-translate="promptEngineering">Prompt Engineering Handbook</h2>
         </div>
         <div class="row gx-4 gx-lg-5">
             <div class="col-lg-12">
-                <p class="lead mb-4" style="text-align: justify;">
+                <p class="lead mb-4" style="text-align: justify;" data-translate="aiIntro">
                     As an AI Web Technologist, I've deeply immersed myself in Prompt Engineering - a crucial discipline for effectively utilizing Large Language Models (LLMs). Prompt Engineering encompasses techniques and best practices for interacting with AI systems, enabling enhanced performance across various applications.
                 </p>
                 <div class="row gx-2 gy-2">
@@ -168,8 +181,8 @@
                         <a class="portfolio-item" href="https://www.promptingguide.ai/techniques">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2" style="font-size:xx-large;">Core Techniques</div>
-                                    <p class="mb-0" style="font-weight: bold;">
+                                    <div class="h2" style="font-size:xx-large;" data-translate="coreTechniques">Core Techniques</div>
+                                    <p class="mb-0" style="font-weight: bold;" data-translate="techniquesText">
                                         • Zero-Shot Prompting<br>
                                         • Few-Shot Prompting<br>
                                         • Chain-of-Thought Reasoning<br>
@@ -180,15 +193,15 @@
                                     </p>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/Screenshot 2025-01-06 at 4.57.23 PM.png" alt="Core Techniques" />
+                            <img class="img-fluid" src="assets/img/ai1.png" alt="Core Techniques" />
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="https://www.promptingguide.ai/applications">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2" style="font-size:xx-large;">Application Areas</div>
-                                    <p class="mb-0" style="font-weight: bold;">
+                                    <div class="h2" style="font-size:xx-large;" data-translate="applicationAreas">Application Areas</div>
+                                    <p class="mb-0" style="font-weight: bold;" data-translate="applicationsText">
                                         • Code Generation & Review<br>
                                         • Data Analysis & Visualization<br>
                                         • Content Generation<br>
@@ -199,15 +212,15 @@
                                     </p>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/Screenshot 2025-01-06 at 4.53.18 PM.png" alt="Application Areas" />
+                            <img class="img-fluid" src="assets/img/ai2.png" alt="Application Areas" />
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="https://www.promptingguide.ai/models">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2" style="font-size:xx-large;">Advanced Concepts</div>
-                                    <p class="mb-0" style="font-weight: bold;">
+                                    <div class="h2" style="font-size:xx-large;" data-translate="advancedConcepts">Advanced Concepts</div>
+                                    <p class="mb-0" style="font-weight: bold;" data-translate="advancedConceptsText">
                                         • RAG (Retrieval Augmented Generation)<br>
                                         • Automatic Reasoning & Logic<br>
                                         • Tool-use Integration<br>
@@ -218,15 +231,15 @@
                                     </p>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/Screenshot 2025-01-06 at 4.54.13 PM.png" alt="Advanced Concepts" />
+                            <img class="img-fluid" src="./assets/img/ai 3.png" alt="Advanced Concepts" />
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="https://www.promptingguide.ai/guides/optimizing-prompts">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2" style="font-size:xx-large;">Best Practices</div>
-                                    <p class="mb-0" style="font-weight: bold;">
+                                    <div class="h2" style="font-size:xx-large;" data-translate="bestPractices">Best Practices</div>
+                                    <p class="mb-0" style="font-weight: bold;" data-translate="bestPracticesText">
                                         • Be clear and specific in instructions<br>
                                         • Break complex tasks into smaller steps<br>
                                         • Provide context and examples<br>
@@ -237,13 +250,13 @@
                                     </p>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/Screenshot 2025-01-06 at 5.00.10 PM.png" alt="Best Practices" />
+                            <img class="img-fluid" src="./assets/img/ai4.png" alt="Best Practices" />
                         </a>
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="https://www.promptingguide.ai/" class="btn btn-primary btn-xl">Learn More</a>
-                    <a href="#contact" class="btn btn-secondary btn-xl">Discuss AI Solutions</a>
+                    <a href="https://www.promptingguide.ai/" class="btn btn-primary btn-xl" data-translate="learnMore">Learn More</a>
+                    <a href="#contact" class="btn btn-secondary btn-xl" data-translate="discussAI">Discuss AI Solutions</a>
                 </div>
             </div>
         </div>
@@ -255,15 +268,13 @@
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-10">
-                        <h2>Get in touch with me!</h2>
-                        <p class="lead mb-5">
+                        <h2 data-translate="getInTouch">Get in touch with me!</h2>
+                        <p class="lead mb-5" data-translate="sendMessage">
                             Send me a message
                         </p>
-                        <a class="btn btn-primary btn-xl" href="mailto:lars.tischer@outlook.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 24 24">
-                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"></path>
-                            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"></path>
-                          </svg> Email</a>
-                    <a class="btn btn-secondary btn-xl" href="./assets/img/Lars Tischer_CV.pdf" download="Lars-Tischer-cv.pdf">Download CV</a></div>
+                        <a class="btn btn-primary btn-xl" href="mailto:lars.tischer@outlook.com" data-translate="email">Email</a>
+                        <a class="btn btn-secondary btn-xl" href="./assets/img/Lars Tischer_CV.pdf" download="Lars-Tischer-cv.pdf" data-translate="downloadCV">Download CV</a>
+                    </div>
                 </div>
             </div>
         </section>
