@@ -121,3 +121,34 @@ portfolioItems.forEach(caption => {
     window.location.href = caption.parentElement.href;
   });
 });
+
+// Add these functions to handle the language toggle visibility
+document.querySelector(".menu-toggle").addEventListener("click", function() {
+    const languageToggle = document.getElementById("languageToggle");
+    // Toggle body class first
+    document.body.classList.toggle("active");
+    // Then set language toggle visibility based on body class
+    languageToggle.style.display = document.body.classList.contains("active") ? "block" : "none";
+});
+
+// Add click listener to document to handle clicks outside navbar
+document.addEventListener("click", function(event) {
+    const sidebar = document.getElementById("sidebar-wrapper");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const languageToggle = document.getElementById("languageToggle");
+    
+    // If clicking outside sidebar and not on menu toggle or language toggle
+    if (!sidebar.contains(event.target) && 
+        !menuToggle.contains(event.target) && 
+        !languageToggle.contains(event.target)) {
+        // Hide language toggle first
+        languageToggle.style.display = "none";
+        // Then remove active class from body
+        document.body.classList.remove("active");
+    }
+});
+
+// Keep the language toggle click handler
+document.getElementById("languageToggle").addEventListener("click", function(event) {
+    event.stopPropagation();
+});
