@@ -79,9 +79,9 @@ function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'de' : 'en';
     document.documentElement.setAttribute('lang', currentLang);
     
-    // Update flag emoji
+    // Update flag icon
     const languageIcon = document.getElementById('languageIcon');
-    languageIcon.textContent = currentLang === 'en' ? '🇬🇧' : '🇩🇪';
+    languageIcon.src = currentLang === 'en' ? 'assets/img/gb.svg' : 'assets/img/de.svg';
     
     updateContent();
     document.dispatchEvent(new Event('languageChanged'));
