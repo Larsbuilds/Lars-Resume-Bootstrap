@@ -6,36 +6,22 @@ const { OpenAI } = require('openai');
 
 // Initialize OpenAI
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY.trim()
+    apiKey: process.env.OPENAI_API_KEY
 });
 
 // Middleware
 app.use(express.json());
 app.use(express.static(__dirname));
 
-// Test route
-app.get('/api/test', async (req, res) => {
-    try {
-        const completion = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [
-                { role: "user", content: "Say 'OpenAI is working!'" }
-            ]
-        });
-        res.json({ response: completion.choices[0].message.content });
-    } catch (error) {
-        console.error('Test Error:', error);
-        res.status(500).json({ error: error.message });
-    }
+// Routes
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Chat route
 app.post('/api/chat', async (req, res) => {
     try {
-        console.log('1. Server received:', req.body);
-        
-        const userMessage = req.body.message;
-        console.log('2. Processing message:', userMessage);
+        console.log('1. Received message:', req.body.message);
+        console.log('2. API Key exists:', !!process.env.OPENAI_API_KEY);
         
         const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
@@ -46,7 +32,7 @@ app.post('/api/chat', async (req, res) => {
                 },
                 { 
                     role: "user", 
-                    content: userMessage 
+                    content: req.body.message 
                 }
             ]
         });
@@ -54,7 +40,7 @@ app.post('/api/chat', async (req, res) => {
         console.log('3. OpenAI response:', completion.choices[0].message.content);
         res.json({ response: completion.choices[0].message.content });
     } catch (error) {
-        console.error('4. Server error:', error);
+        console.error('4. Error details:', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -62,5 +48,5 @@ app.post('/api/chat', async (req, res) => {
 const PORT = process.env.PORT || 3007;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-    console.log('API Key length:', process.env.OPENAI_API_KEY?.length);
+    console.log('OpenAI API Key length:', process.env.OPENAI_API_KEY?.length);
 });

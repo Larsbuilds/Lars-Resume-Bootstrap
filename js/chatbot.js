@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatInput = document.querySelector('.chat-input');
     const chatMessages = document.querySelector('.chat-messages');
 
+    // Clear any existing messages
+    chatMessages.innerHTML = '';
+
     chatButton.addEventListener('click', () => {
         chatInterface.style.display = chatInterface.style.display === 'none' ? 'block' : 'none';
         if (chatInterface.style.display === 'block') {
@@ -18,8 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function callChatAPI(message) {
         try {
-            console.log('1. Sending message:', message);
-            
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
@@ -28,18 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({ message: message })
             });
 
-            console.log('2. Raw response:', response);
-
             if (!response.ok) {
                 throw new Error('API request failed');
             }
 
             const data = await response.json();
-            console.log('3. Parsed response:', data);
-            
             return data.response;
         } catch (error) {
-            console.error('4. Error:', error);
+            console.error('Error:', error);
             return 'Sorry, I encountered an error. Please try again.';
         }
     }
@@ -59,14 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
             chatMessages.appendChild(loadingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Get AI response
-            const aiResponse = await callChatAPI(userMessage);
-            
-            // Remove loading indicator
-            loadingDiv.remove();
-            
-            // Add AI response
-            addMessage(aiResponse, 'bot');
+            try {
+                // Get AI response
+                const aiResponse = await callChatAPI(userMessage);
+                
+                // Remove loading indicator
+                loadingDiv.remove();
+                
+                // Add AI response
+                addMessage(aiResponse, 'bot');
+            } catch (error) {
+                loadingDiv.remove();
+                addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+            }
         }
     });
 
@@ -78,6 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Add initial greeting
+    // Add initial greeting only once
     addMessage('Hello! I\'m Lars\'s AI assistant. How can I help you today?', 'bot');
 }); 
