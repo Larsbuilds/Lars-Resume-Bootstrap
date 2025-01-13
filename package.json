@@ -1,0 +1,26 @@
+{
+  "name": "lars-resume-bootstrap",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Larsbuilds/Lars-Resume-Bootstrap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Larsbuilds/Lars-Resume-Bootstrap/issues"
+  },
+  "homepage": "https://github.com/Larsbuilds/Lars-Resume-Bootstrap#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.78.1"
+  }
+}
