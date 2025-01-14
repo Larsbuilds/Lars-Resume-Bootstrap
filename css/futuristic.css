@@ -486,26 +486,29 @@ body.sidebar-toggled {
 /* Chatbot Styles */
 #chatbotButton {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     right: 20px;
     z-index: 1000;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #4ade80;
-    border: none;
-    color: #1a1a2e;
+    background-color: rgba(26, 26, 46, 0.95) !important;
+    border: 2px solid var(--neon-blue);
+    color: #4ade80;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px); /* Adding blur effect like navbar */
 }
 
 #chatbotButton:hover {
-    background-color: #22c55e;
-    transform: scale(1.1);
+    color: var(--tech-green);
+    transform: scale(1.2);
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
 }
 
 #chatInterface {
