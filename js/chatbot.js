@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Clear any existing messages
     chatMessages.innerHTML = '';
+    
+    // Set initial display state explicitly
+    chatInterface.style.display = 'none';
 
     chatButton.addEventListener('click', () => {
         chatInterface.style.display = chatInterface.style.display === 'none' ? 'block' : 'none';
