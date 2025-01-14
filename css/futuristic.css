@@ -514,7 +514,7 @@ body.sidebar-toggled {
 #chatInterface {
     display: none;
     position: fixed;
-    bottom: 100px;
+    bottom: 25px;
     right: 20px;
     width: 350px;
     height: 500px;
