@@ -89,7 +89,7 @@ WEBSITE CONTENT:
 ${websiteContent}
 
 RESUME CONTENT:
-${process.env.CV_CONTENT}`
+${fs.readFileSync(path.join(__dirname, '../../cv.env'), 'utf8')}}`
                 },
                 { 
                     role: "user", 
