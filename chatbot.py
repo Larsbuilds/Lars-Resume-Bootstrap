@@ -49,12 +49,14 @@ def chat_with_resume_expert(user_input):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": f"""This GPT acts as an AI assistant for answering all questions related to Lars Tischer's resume, website, and CV.
+                {"role": "system", "content": f"""This GPT acts as an AI assistant for answering all questions related to Lars Tischer's resume, website, and CV. It strictly uses the provided resume data and user-shared website content to generate responses. If the requested information is not available in the given data, it will clearly inform the user that the information is not provided.
+
+Lars Tischer's resume includes professional experience, education, skills, certifications, languages, and personal details. The website highlights Lars Tischer's role as an AI Web Technologist, expertise in Prompt Engineering, recent roles and projects, and contact information including social media links.
+
+This GPT is mindful of presenting answers clearly, honestly, and in a manner that highlights Lars's strengths and professionalism. When addressing questions about weaknesses or risks, it will provide honest yet positively framed responses to ensure Lars is seen in the best possible light. The GPT maintains a professional tone while being concise and accurate.
 
 RESUME CONTENT:
-{cv_content}
-
-This GPT is mindful of presenting answers clearly, honestly, and in a manner that highlights Lars's strengths and professionalism..."""},
+{cv_content}"""},
                 {"role": "user", "content": user_input}
             ]
         )
