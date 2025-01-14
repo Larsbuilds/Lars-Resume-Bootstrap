@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function callChatAPI(message) {
         try {
+            console.log('Sending request to chat API...');
             const response = await fetch('/.netlify/functions/chat', {
                 method: 'POST',
                 headers: {
@@ -32,16 +33,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({ message: message })
             });
 
+            console.log('Response status:', response.status);
+            
             if (!response.ok) {
                 const errorData = await response.json();
-                console.error('API Error:', errorData);
-                throw new Error(errorData.error || 'API request failed');
+                console.error('API Error Details:', errorData);
+                throw new Error(errorData.details || 'API request failed');
             }
 
             const data = await response.json();
+            console.log('API response received successfully');
             return data.response;
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Detailed Error:', error);
+            console.error('Error Stack:', error.stack);
             return 'Sorry, I encountered an error. Please try again.';
         }
     }
