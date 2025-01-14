@@ -1,6 +1,7 @@
-<<<<<<< HEAD
+
 .env 
 node_modules
-=======
-.env 
->>>>>>> 301de313bc87d28adb7073663caf79e13c202517
+cv.env
+
+# Local Netlify folder
+.netlify
