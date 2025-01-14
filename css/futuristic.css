@@ -562,6 +562,9 @@ body.sidebar-toggled {
     color: #1a1a2e;
     font-family: 'Share Tech Mono', monospace;
 }
+input.chat-input::placeholder {
+    color: var(--tech-green);
+  }
 
 .chat-input:focus {
     outline: none;
