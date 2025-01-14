@@ -1,4 +1,6 @@
 const { OpenAI } = require('openai');
+const fs = require('fs');
+const path = require('path');
 
 exports.handler = async function(event, context) {
     try {
@@ -9,12 +11,27 @@ exports.handler = async function(event, context) {
             };
         }
 
+        // Log the path we're trying to read from
+        const cvPath = path.join(__dirname, '../../cv.env');
+        console.log('Attempting to read CV from:', cvPath);
+
+        // Try reading the file
+        try {
+            const cvContent = fs.readFileSync(cvPath, 'utf8');
+            console.log('CV Content loaded successfully');
+        } catch (fileError) {
+            console.error('Error reading CV file:', fileError);
+            throw new Error(`Failed to read CV file: ${fileError.message}`);
+        }
+
         const openai = new OpenAI({
             apiKey: process.env.OPENAI_API_KEY
         });
 
         const body = JSON.parse(event.body);
         const userMessage = body.message;
+
+        console.log('Making OpenAI API call...');
 
         const websiteContent = `
 ROLE: AI Web Technologist
@@ -98,6 +115,8 @@ ${fs.readFileSync(path.join(__dirname, '../../cv.env'), 'utf8')}}`
             ]
         });
 
+        console.log('OpenAI API call successful');
+
         return {
             statusCode: 200,
             headers: {
@@ -108,6 +127,7 @@ ${fs.readFileSync(path.join(__dirname, '../../cv.env'), 'utf8')}}`
             })
         };
     } catch (error) {
+        console.error('Function error:', error);
         return {
             statusCode: 500,
             body: JSON.stringify({ 
