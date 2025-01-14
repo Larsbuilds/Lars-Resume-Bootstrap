@@ -35,6 +35,33 @@ document.addEventListener('DOMContentLoaded', function() {
         isChatOpen = false;
     }
 
+    async function callChatAPI(message) {
+        try {
+            console.log('Sending request to chat API...');
+            const response = await fetch('/.netlify/functions/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            });
+
+            console.log('Response status:', response.status);
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('API Error:', errorData);
+                throw new Error(errorData.error || 'API request failed');
+            }
+
+            const data = await response.json();
+            return data.response;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error; // Let the sendMessage function handle the error
+        }
+    }
+
     async function sendMessage() {
         const userMessage = chatInput.value.trim();
         if (!userMessage) return;
