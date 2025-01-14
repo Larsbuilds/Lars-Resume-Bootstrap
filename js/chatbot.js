@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function callChatAPI(message) {
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('/.netlify/functions/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (!response.ok) {
-                throw new Error('API request failed');
+                const errorData = await response.json();
+                console.error('API Error:', errorData);
+                throw new Error(errorData.error || 'API request failed');
             }
 
             const data = await response.json();
