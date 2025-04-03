@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding School Signup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main align="center">
+        <h1>Sign Up for Coding School</h1>
+        
+        <form action="/submit" method="POST" width="50%">
+            <fieldset>
+                <legend><b>Personal Information</b></legend>
+
+                <table cellpadding="5" align="center">
+                    <tr>
+                        <td align="right">
+                            <label for="firstName">First Name:</label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="firstName" name="firstName" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label for="lastName">Last Name:</label>
+                        </td>
+                        <td align="left">
+                            <input type="text" id="lastName" name="lastName" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label for="email">Email:</label>
+                        </td>
+                        <td align="left">
+                            <input type="email" id="email" name="email" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label for="phone">Phone Number:</label>
+                        </td>
+                        <td align="left">
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">
+                            <label for="bootcamp">Select Bootcamp:</label>
+                        </td>
+                        <td align="left">
+                            <select id="bootcamp" name="bootcamp" required>
+                                <option value="">--Please choose an option--</option>
+                                <option value="webdev">Web Development</option>
+                                <option value="datascience">Data Science</option>
+                                <option value="uxui">UX/UI Design</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5" align="center">
+                            <br>
+                            <button type="submit">Sign Up</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html> 

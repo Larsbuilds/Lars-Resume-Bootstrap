@@ -1,0 +1,41 @@
+{
+  "name": "larsbuilds-ai-migration",
+  "version": "1.0.0",
+  "description": "AI chat component with OpenAI integration for easy migration to other projects",
+  "main": "src/functions/server.js",
+  "scripts": {
+    "start": "node src/functions/server.js",
+    "dev": "nodemon src/functions/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "ai",
+    "chat",
+    "openai",
+    "netlify",
+    "express"
+  ],
+  "author": "Lars Tischer",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.78.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": ["<rootDir>/test/setup.js"],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/functions/chat.js"
+    ]
+  }
+}

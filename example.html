@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Component Example</title>
+    <link rel="stylesheet" href="src/css/futuristic.css">
+</head>
+<body>
+    <!-- Your website content goes here -->
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>This is an example page demonstrating the AI chat component.</p>
+    </div>
+
+    <!-- Chat Button -->
+    <button id="chat-button" aria-label="Open chat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="hidden">
+        <div id="chat-header">
+            <h3>AI Assistant</h3>
+            <button id="close-chat" aria-label="Close chat">×</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." aria-label="Chat input">
+            <button id="send-message" aria-label="Send message">Send</button>
+        </div>
+    </div>
+
+    <!-- Load the chat script -->
+    <script src="src/js/chatbot.js"></script>
+</body>
+</html> 
